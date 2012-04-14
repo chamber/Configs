@@ -55,7 +55,7 @@ set :separator, "|"
 
 screen 1 do
 subtle = Subtlext::Icon.new("/home/conor/.icons/subtle/subtle1.xbm")
-  top    [ :views, :spacer, :weather_mod, :clock, :battery, subtle ]
+  top    [ :views, :spacer, :sublets, :weather_mod, :clock, :battery, subtle ]
   bottom [ :mpd, :volume, :spacer, :nettraffic, :wifi, :title, :tray ] 
 end 
 
@@ -203,12 +203,16 @@ grab "W-S-1", :ViewJump1
 grab "W-S-2", :ViewJump2
 grab "W-S-3", :ViewJump3
 grab "W-S-4", :ViewJump4
+grab "W-S-5", :ViewJump5
+grab "W-S-6", :ViewJump6
 
 # Switch current view
 grab "W-1", :ViewSwitch1
 grab "W-2", :ViewSwitch2
 grab "W-3", :ViewSwitch3
 grab "W-4", :ViewSwitch4
+grab "W-5", :ViewSwitch5
+grab "W-6", :ViewSwitch6
 
 # Select next and prev view */
 grab "KP_Add",      :ViewNext
@@ -300,11 +304,13 @@ grab "W-p", "pcmanfm"
 grab "W-b", "nitrogen"
 grab "W-e", "leafpad"
 grab "C-q", "oblogout"
+grab "A-s", "spacefm"
 grab "W-c", "mcomix"
 grab "W-n", "urxvt -e ncmpcpp"
 grab "C-r", "urxvt -e ranger"
 grab "W-m", "urxvt -e mutt"
 grab "A-l", "urxvt -e lynx"
+grab "W-x", "xfburn"
 
 grab "C-l" do Subtle::Contrib::Launcher.run end
 
@@ -327,7 +333,7 @@ end
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt|terminator"
 tag "browser", "firefox|chromium-browser"
-tag "filemanager", "pcmanfm|xarchiver"
+tag "filemanager", "pcmanfm|xarchiver|spacefm"
 tag "reader", "evince|leafpad"
 tag "media", "deadbeef|vlc"
 
@@ -361,6 +367,11 @@ end
 tag "float" do
   match "display"
   float true
+end
+
+tag "term" do
+  match "dzen2"
+  type  :dock
 end
 
 # Gimp
@@ -431,8 +442,12 @@ sublet :weather_mod do
   locale "en"
   units "c"
   location "Belfast"
-  day_color "#3f3f3f"
+  day_color "#bf4303"
   temp_color "#4863a0"
   sep "-"
   temp_suffix 'c'
+end 
+
+sublet :battery do
+  colors 10 => "#FF0000", 20 => "#399bff", 100 => "#33cc00"
 end 
