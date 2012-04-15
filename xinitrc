@@ -5,4 +5,4 @@
 xbindkeys &
 mpd ~/.mpdconf &
 nitrogen --restore &
-exec ck-launch-session dbus-launch subtle
+exec dbus-launch subtle
