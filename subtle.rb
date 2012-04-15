@@ -309,6 +309,7 @@ grab "W-c", "mcomix"
 grab "W-n", "urxvt -name ncmpcpp -e ncmpcpp"
 grab "C-r", "urxvt -name ranger -e ranger"
 grab "W-m", "urxvt -name mutt -e mutt"
+grab "W-a", "urxvt -name alpine -e alpine"
 grab "A-l", "urxvt -name lynx -e lynx"
 grab "W-x", "xfburn"
 
