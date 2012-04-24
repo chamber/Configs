@@ -1,0 +1,105 @@
+# set to yes if you want Conky to be forked in the background
+background yes
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+#xftfont Trebuchet MS:size=10
+xftfont clean:size=8
+
+# Text alpha when using Xft
+xftalpha 1
+
+# Update interval in seconds
+update_interval 1.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+
+own_window yes
+own_window_transparent yes
+#own_window_type override
+own_window_type below
+own_window_type desktop
+#own_window_type normal #use this if you want a nice shadow to appear around conky
+
+# If own_window is yes, these window manager hints may be used
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 1280 1
+
+# Maximum width
+maximum_width 1280
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Draw borders around graphs
+draw_graph_borders no
+
+# Stippled borders?
+# stippled_borders 8
+
+# border margins
+# border_margin 2
+
+# border width
+# border_width 1
+
+# Default colors and also border colors
+#default_color black
+default_color white
+default_shade_color black
+default_outline_color black
+
+# Text alignment, other possible values are commented
+#alignment top_left
+#alignment top_right
+alignment bottom_left
+#alignment bottom_right
+#alignment none
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 12
+gap_y 12
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+text_buffer_size 512
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+#colours
+color1 white
+color2 light red
+color4 light blue
+
+##############################################
+##############################################
+
+TEXT
+${time %a, %d of %b}${goto 90} ${time %H:%M:%S}${font} ${goto 156}| Host: $nodename ${goto 265}| Uptime: $uptime ${goto 410} | RAM: $mem/$memmax ${goto 580}| Home: ${fs_used /home}/${fs_size /home} ${goto 760}| CPU Usage: ${cpu cpu1}% ${goto 880}| Gmail1: ${execpi 300 python ~/.scripts/gmail.py} ${goto 990}| U: ${upspeedf eth0} Kbps ${goto 1120}| TotalU: ${totalup eth0} ${goto 1260}|
+${hr}
+$sysname $kernel ${goto 156}| IP:$addr ${goto 265}| WAN IP: ${pre_exec wget -O - http://ip.tupeux.com | tail} ${goto 410} | Swap: $swap/$swapmax ${goto 580}| Root: ${fs_used /}/${fs_size /} ${goto 760}| Wireless: ${wireless_link_qual_perc wlan0} % ${goto 880}| Gmail2: ${execpi 300 python ~/.scripts/gmail2.py} ${goto 990}| D: ${downspeedf eth0} Kbps ${goto 1120}| TotalD: ${totaldown eth0} ${goto 1260}|
