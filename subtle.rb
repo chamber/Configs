@@ -55,8 +55,8 @@ set :separator, "|"
 
 screen 1 do
 subtle = Subtlext::Icon.new("/home/conor/.icons/subtle/subtle1.xbm")
-  top    [ :views, :spacer, :weather_mod, :clock2, :battery, subtle ]
-  bottom [ :mpd, :volume, :spacer, :wifi, :title, :tray ] 
+  top    [ :views, :spacer, :weather_mod, :clock, :battery, subtle ]
+  bottom [ :mpd, :volume, :spacer, :nettraffic, :wifi, :title, :tray ] 
 end 
 
 
@@ -417,7 +417,7 @@ end
 #
 # == Sublets
 #
-sublet :clock2 do
+sublet :clock do
   interval 30
   format_string "%a %d %B %H:%M"
 end
