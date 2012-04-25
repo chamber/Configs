@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#export BROWSER=firefox-aurora
-#export DE=xfce
+#export BROWSER=firefox
 #exec ck-launch-session dbus-launch openbox-session
 mpd ~/.mpdconf &
 nitrogen --restore &
