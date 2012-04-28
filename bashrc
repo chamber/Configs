@@ -1,3 +1,5 @@
+export VISUAL=vim
+export EDITOR=vim
 alias ls='ls --color=auto'
 [ ! "$UID" = "0" ] && archey3 -c blue
 [  "$UID" = "0" ] && archey3 i -c red
