@@ -304,7 +304,7 @@ grab "W-c", "mcomix"
 grab "W-n", "urxvt -e ncmpcpp"
 grab "C-r", "urxvt -e ranger"
 grab "W-m", "urxvt -e mutt"
-grab "A-l", "urxvt -e mutt"
+grab "A-l", "urxvt -e lynx"
 
 grab "C-l" do Subtle::Contrib::Launcher.run end
 
