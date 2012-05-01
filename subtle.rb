@@ -301,6 +301,10 @@ grab "W-b", "nitrogen"
 grab "W-e", "leafpad"
 grab "C-q", "oblogout"
 grab "W-c", "mcomix"
+grab "W-n", "urxvt -e ncmpcpp"
+grab "C-r", "urxvt -e ranger"
+grab "W-m", "urxvt -e mutt"
+grab "A-l", "urxvt -e mutt"
 
 grab "C-l" do Subtle::Contrib::Launcher.run end
 
@@ -322,14 +326,14 @@ end
 
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt|terminator"
-tag "browser", "firefox|navigator|chromium-browser"
+tag "browser", "firefox|chromium-browser"
 tag "filemanager", "pcmanfm|xarchiver"
 tag "reader", "evince|leafpad"
-tag "media", "ncmpcpp|deadbeef|vlc"
+tag "media", "deadbeef|vlc"
 
 # Placement
 tag "editor" do
-  match  "leafpad|vim"
+  match  "leafpad|gvim"
   resize true
 end
 
