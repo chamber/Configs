@@ -430,6 +430,11 @@ end
 #view "gimp" do
 #   match "gimp"
 #end
+
+on :start do
+   Subtlext::Subtle.spawn "nm-applet"
+end
+
 #
 # == Sublets
 #
