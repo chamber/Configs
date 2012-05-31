@@ -44,7 +44,7 @@ set :font, "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
 #set :font, "xft:sans-8"
 
 # Separator between sublets
-set :separator, "|"
+set :separator, "::"
 
 # Set the WM_NAME of subtle (Java quirk)
 # set :wmname, "LG3D"
@@ -55,7 +55,7 @@ set :separator, "|"
 
 screen 1 do
 subtle = Subtlext::Icon.new("/home/conor/.icons/subtle/subtle1.xbm")
-  top    [ :views, :spacer, :sublets, :weather_mod, :clock, :battery, subtle ]
+  top    [ :views, :betternotify, :spacer, :weather_mod, :clock, :battery, subtle ]
   bottom [ :mpd, :volume, :spacer, :nettraffic, :wifi, :title, :tray ] 
 end 
 
