@@ -1,17 +1,22 @@
 export VISUAL=vim
 export EDITOR=vim
 alias ls='ls --color=auto'
-[ ! "$UID" = "0" ] && archey3 -c blue
-[  "$UID" = "0" ] && archey3 i -c red
+#[ ! "$UID" = "0" ] && archey3 -c blue
+#[  "$UID" = "0" ] && archey3 i -c red
 PS1="\[\e[01;31m\]┌─[\[\e[01;35m\u\e[01;31m\]]──[\[\e[00;37m\]${HOSTNAME%%.*}\[\e[01;32m\]]:\w$\[\e[01;31m\]\n\[\e[01;31m\]└──\[\e[01;36m\]>>\[\e[0m\]"
+#
+alias screener="archey3 && colours && scrot -cd 5"
 
 # dropbox
 
 alias dropbox="~/.dropbox-dist/dropboxd" #load dropbox daemon
 
-# get wireless up after kernal update
+# Alsamixer
 
-alias wireless="bash /home/conor/Downloads/RTL8188C/install.sh"
+alias vol='alsamixer'
+if [ $UID -ne 0 ]; then
+    alias volstore='sudo alsactl store'
+fi
 
 # privileged access
 
@@ -23,7 +28,6 @@ if [ $UID -ne 0 ]; then
     alias kick='sudo reboot'
     alias halt='sudo halt'
     alias update='sudo pacman -Syyu'   
-    alias vol='sudo modprobe snd_mixer_oss'
 fi
 
 # pacman aliases (if applicable, replace 'pacman' with your favourite AUR helper)

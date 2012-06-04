@@ -75,7 +75,7 @@ style :views do
 
   # Style for the active views
   style :focus do
-    foreground  "#4863a0"
+    foreground  "#66a9b9"
   end
 
   # Style for urgent window titles and views
@@ -106,7 +106,7 @@ end
 
 # Style for focus window title
 style :title do
-  foreground  "#4863a0"
+  foreground  "#66a9b9"
 end
 
 # Style for active/inactive windows
@@ -448,8 +448,8 @@ sublet :weather_mod do
   locale "en"
   units "c"
   location "Belfast"
-  day_color "#bf4303"
-  temp_color "#4863a0"
+  day_color "#D23D3D"
+  temp_color "#66a9b9"
   sep "-"
   temp_suffix 'c'
 end 
