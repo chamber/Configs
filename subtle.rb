@@ -55,8 +55,8 @@ set :separator, "::"
 
 screen 1 do
 subtle = Subtlext::Icon.new("/home/conor/.icons/subtle/subtle1.xbm")
-  top    [ :views, :betternotify, :spacer, :weather_mod, :clock, :battery, subtle ]
-  bottom [ :mpd, :volume, :spacer, :nettraffic, :wifi, :title, :tray ] 
+  top    [ :views, :betternotify, :spacer, :weather_mod, :separator, :clock, :separator, :battery, :separator, subtle ]
+  bottom [ :mpd, :volume, :spacer, :nettraffic, :separator, :wifi, :separator, :title, :tray ] 
 end 
 
 
@@ -333,7 +333,7 @@ end
 
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt|terminator"
-tag "browser", "firefox|chromium-browser"
+tag "browser", "firefox|chromium"
 tag "filemanager", "pcmanfm|xarchiver|spacefm"
 tag "reader", "evince|leafpad"
 tag "media", "deadbeef|vlc"
@@ -350,7 +350,7 @@ tag "fixed" do
 end
 
 tag "resize" do
-  match  "sakura|gvim"
+  match  "sakura"
   resize true
 end
 
