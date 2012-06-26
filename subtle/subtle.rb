@@ -39,13 +39,6 @@ set :resize, false
 # Enable gravity tiling
 set :tiling, false
 
-# Font string either take from e.g. xfontsel or use xft
-set :font, "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
-#set :font, "xft:sans-8"
-
-# Separator between sublets
-set :separator, "::"
-
 # Set the WM_NAME of subtle (Java quirk)
 # set :wmname, "LG3D"
 
@@ -68,10 +61,12 @@ style :all do
   background  "#202020"
   border      "#303030", 0
   padding     0, 3
+  font "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
 end
 
 # Style for the views
 style :views do
+foreground  "#757575"
 
   # Style for the active views
   style :focus do
@@ -87,11 +82,6 @@ style :views do
   style :occupied do
     foreground  "#b8b8b8"
   end
-
-  # Style for unoccupied views (views without clients)
-  style :unoccupied do
-    foreground  "#757575"
-  end
 end
 
 # Style for sublets
@@ -102,6 +92,7 @@ end
 # Style for separator
 style :separator do
   foreground  "#757575"
+  seperator "::"
 end
 
 # Style for focus window title
@@ -300,6 +291,7 @@ grab "W-A-9", [ :bottom_right, :bottom_right66, :bottom_right33 ]
 # Exec programs
 grab "W-Return", "urxvt"
 grab "W-w", "firefox"
+grab "A-c", "chromium"
 grab "W-p", "pcmanfm"
 grab "W-b", "nitrogen"
 grab "W-e", "leafpad"
@@ -399,31 +391,37 @@ iconpath = "/home/conor/.icons/subtle"
 
 view "term" do
    match "terms"
+   icon_only true
    icon   Subtlext::Icon.new("#{iconpath}/term.xbm")
 end
 
 view "web" do
    match "browser"
+   icon_only true
    icon   Subtlext::Icon.new("#{iconpath}/world.xbm")
 end
 
 view "edit" do
    match "edit"
+   icon_only true
    icon   Subtlext::Icon.new("#{iconpath}/pencil.xbm")
 end
 
 view "media" do
    match "media"
+   icon_only true
    icon   Subtlext::Icon.new("#{iconpath}/tv.xbm")
 end
 
 view "file" do
    match "filemanager"
+   icon_only true
    icon   Subtlext::Icon.new("#{iconpath}/file.xbm")
 end
 
 view "arch" do
    match "default"
+   icon_only true
    icon   Subtlext::Icon.new("#{iconpath}/arch.xbm")
 end
 
